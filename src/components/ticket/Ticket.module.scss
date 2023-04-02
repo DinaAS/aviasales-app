@@ -1,0 +1,80 @@
+@import '/src/scss/vars';
+
+.Card {
+  padding: 20px;
+  background-color: $background-color-white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  span {
+    font-family: $font-stack;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: $color-blue;
+
+    @media (max-width: 550px) {
+      font-size: 20px;
+    }
+  }
+
+  img {
+    @media (max-width: 550px) {
+      width: 80px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 550px) {
+    display: block;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+
+    span:first-child {
+      font-family: $font-stack;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 18px;
+      color: $light-grey-text;
+    }
+
+    span:last-child {
+      font-family: $font-stack;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: $text-color-dark-grey;
+    }
+  }
+}
+
+.list:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.line {
+  display: none;
+
+  @media (max-width: 550px) {
+    display: block;
+    color: $light-grey-text;
+  }
+}

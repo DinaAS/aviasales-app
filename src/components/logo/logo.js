@@ -1,9 +1,9 @@
-import './logo.scss'
+import styles from './Logo.module.scss'
 import icon from './Logo.png'
 
 function Logo() {
   return (
-    <div className="Logo-wrapper">
+    <div className={styles.wrapper}>
       <a href="/#">
         <img src={icon} alt="plane" />
       </a>

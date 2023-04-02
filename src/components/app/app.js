@@ -1,24 +1,23 @@
-import './app.scss'
+import cn from 'classnames'
 
 import Logo from '../logo'
-import Tabs from '../tabs/tabs'
-import Filter from '../filter/filter'
-import TicketsList from '../tickets-list/tickets-list'
+import Tabs from '../tabs/Tabs'
+import Filter from '../filter'
+import TicketsList from '../tickets-list'
 import Button from '../button'
 
-const styleDiv = {
-  display: 'flex',
-  flexDirection: 'column',
-}
+import styles from './App.module.scss'
 
 function App() {
   return (
-    <div className="App-container">
-      <div className="App-wrapper">
+    <div className={cn(styles.container)}>
+      <div className={cn(styles.wrapper)}>
         <Logo />
-        <div className="Main-content">
-          <Filter />
-          <div style={styleDiv}>
+        <div className={cn(styles.content)}>
+          <div className={cn(styles.left_container)}>
+            <Filter />
+          </div>
+          <div className={cn(styles.right_container)}>
             <Tabs />
             <TicketsList />
             <Button />

@@ -1,8 +1,10 @@
-import './button.scss'
+import cn from 'classnames'
+
+import styles from './Button.module.scss'
 
 function Button() {
   return (
-    <button className="Button" type="submit">
+    <button className={cn(styles.Button)} type="submit">
       Показать еще 5 билетов!
     </button>
   )

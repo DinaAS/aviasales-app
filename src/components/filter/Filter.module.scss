@@ -1,0 +1,111 @@
+@import '/src/scss/vars';
+
+.container {
+  position: relative;
+  height: auto;
+  width: 232px;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: $background-color-white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+
+  @media (max-width: 900px) {
+    width: fit-content;
+  }
+
+  @media (max-width: 550px) {
+    padding: 10px;
+  }
+}
+
+.title {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-family: $font-stack;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 12px;
+  color: $text-color-dark-grey;
+}
+
+.customCheckbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.customCheckbox + label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #9abbce;
+  border-radius: 0.13em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  z-index: 7;
+}
+
+.customCheckbox + label:hover::before {
+  cursor: pointer;
+}
+
+.customCheckbox,
+.checked + label::before {
+  border-color: #2196f3;
+  background-color: initial;
+  background-image: url('./Shape.svg');
+}
+
+.customCheckbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item:hover::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  background-color: #f1fcff;
+  width: 228px;
+  height: 40px;
+  margin-left: -20px;
+  height: 20px;
+}
+
+.item {
+  label {
+    span {
+      font-family: $font-stack;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: $text-color-dark-grey;
+      z-index: 7;
+
+      @media (max-width: 550px) {
+        font-size: 10px;
+      }
+    }
+
+    span:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,38 @@
+@import '/src/scss/vars';
+
+.container {
+  background-color: $background-color-blue;
+  height: fit-content;
+  padding: 50px 0;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 550px) {
+    width: 90%;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  max-width: 754px;
+  margin: 0 auto;
+}
+
+.left_container {
+  @media (max-width: 900px) {
+    max-width: 40%;
+  }
+}
+
+.right_container {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 900px) {
+    width: 60%;
+  }
+}
