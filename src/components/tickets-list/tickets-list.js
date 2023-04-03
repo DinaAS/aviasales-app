@@ -1,19 +1,22 @@
+import { useSelector } from 'react-redux'
+
 import Ticket from '../ticket/Ticket'
 
 import styles from './Tickets-list.module.scss'
 
 function TicketsList() {
+  const tickets = useSelector((state) => state.ticketReducer.tickets)
+
+  const ticketArrSlice = (ticketsArr) => {
+    const newArr = ticketsArr.slice(0, 5)
+    return newArr
+  }
+
   return (
     <ul className={styles.list}>
-      <li className={styles.item}>
-        <Ticket />
-      </li>
-      <li className={styles.item}>
-        <Ticket />
-      </li>
-      <li className={styles.item}>
-        <Ticket />
-      </li>
+      {ticketArrSlice(tickets).map((ticket) => {
+        return <Ticket key={ticket.id} {...ticket} />
+      })}
     </ul>
   )
 }

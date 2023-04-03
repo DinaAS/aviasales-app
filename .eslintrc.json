@@ -33,7 +33,7 @@
       "indent": ["error", 2],
       "prettier/prettier": "error",
       "linebreak-style": [0, "unix"],
-      "quotes": ["error", "single"],
+      "quotes": ["error", "single", { "allowTemplateLiterals": true }],
       "jsx-a11y/label-has-associated-control": ["error", {
         "required": {
           "some": ["nesting", "id"]
