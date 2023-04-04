@@ -1,9 +1,9 @@
-/* eslint-disable */
 import { useDispatch, useSelector } from 'react-redux'
 import cn from 'classnames'
 
-import styles from './Tabs.module.scss'
 import actions from '../../redux/actions'
+
+import styles from './Tabs.module.scss'
 
 function Tabs() {
   const dispatch = useDispatch()
@@ -16,14 +16,20 @@ function Tabs() {
     switch (currentTarget) {
       case 'cheap':
         dispatch(actions.sort.getCheap())
+        dispatch(actions.tickets.getCheapTickets())
         break
       case 'fast':
         dispatch(actions.sort.getFast())
+        dispatch(actions.tickets.getFastTickets())
         break
       case 'optimal':
         dispatch(actions.sort.getOptimal())
+        dispatch(actions.tickets.getOptimalTickets())
         break
+      default:
+        return undefined
     }
+    return undefined
   }
 
   const activeCheap = cn({
@@ -43,17 +49,17 @@ function Tabs() {
 
   return (
     <ul className={cn(styles.list)}>
-      <li onClick={toggleSort}>
+      <li onClick={toggleSort} onKeyDown={() => toggleSort}>
         <a className={activeCheap} href="/#" id="cheap">
           Самый дешевый
         </a>
       </li>
-      <li onClick={toggleSort}>
+      <li onClick={toggleSort} onKeyDown={() => toggleSort}>
         <a className={activeFast} href="/#" id="fast">
           Самый быстрый
         </a>
       </li>
-      <li onClick={toggleSort}>
+      <li onClick={toggleSort} onKeyDown={() => toggleSort}>
         <a className={activeOptimal} href="/#" id="optimal">
           Оптимальный
         </a>

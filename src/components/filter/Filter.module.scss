@@ -74,11 +74,11 @@
 }
 
 .item:hover::before {
-  display: inline-block;
+  display: block;
   position: absolute;
   content: '';
   background-color: #f1fcff;
-  width: 228px;
+  width: 100%;
   height: 40px;
   margin-left: -20px;
   height: 20px;

@@ -2,7 +2,8 @@
 
 .container {
   background-color: $background-color-blue;
-  height: fit-content;
+  height: 100vh;
+  overflow: auto;
   padding: 50px 0;
 }
 
@@ -35,4 +36,9 @@
   @media (max-width: 900px) {
     width: 60%;
   }
+}
+
+.spin {
+  height: 50px;
+  margin-bottom: 5px;
 }

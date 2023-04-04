@@ -26,11 +26,12 @@
     "plugins": ["react", "prettier", "import"],
     "rules": {
       "react/jsx-uses-react": "off",
+      "no-param-reassign": [2, { "props": false }],
       "react/react-in-jsx-scope": "off",
       "react/jsx-props-no-spreading": "off",
       "react/state-in-constructor": "off",
       "arrow-body-style": "off",
-      "indent": ["error", 2],
+      "indent": ["off"],
       "prettier/prettier": "error",
       "linebreak-style": [0, "unix"],
       "quotes": ["error", "single", { "allowTemplateLiterals": true }],
@@ -43,6 +44,17 @@
       "react/prop-types": 0,
       "import/no-unresolved": [2, { "caseSensitive": false }],
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "jsx-a11y/no-noninteractive-element-interactions": [
+        "error",
+        {
+          "handlers": [
+            "onMouseDown",
+            "onMouseUp",
+            "onKeyPress",
+            "onKeyUp"
+          ]
+        }
+      ],
       "import/order": [
         2,
         {
